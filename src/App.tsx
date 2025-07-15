@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Grid, GridItem, Show, Stack, Text } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import { useColorMode } from "@/components/ui/color-mode"
+import GameGrid from "./components/GameGrid";
 
 function App() {
 
@@ -21,12 +22,12 @@ function App() {
         </GridItem>
 
       
-          <GridItem area="aside" bg="gold"  display={{ base: "none", lg: "block" }}>
+          <GridItem area="aside" display={{ base: "none", lg: "block" }}>
             Aside
           </GridItem>
       
-        <GridItem area="main" bg="blue">
-          Main
+        <GridItem area="main">
+          <GameGrid></GameGrid>
         </GridItem>
       </Grid>
 
