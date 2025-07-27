@@ -5,6 +5,7 @@ import { useColorMode } from "@/components/ui/color-mode"
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import { Genre } from "./hooks/useGenres";
+import PlatformSelector from "./components/PlatformSelector";
 
 function App() {
 
@@ -30,11 +31,12 @@ const [selectedGenre,setSelectedGenre]  = useState<Genre|null>(null);
 
       
           <GridItem area="aside" padding={5} display={{ base: "none", lg: "block" }}>
-           <GenreList onSelectedGenre={(genre)=>setSelectedGenre(genre)}/>
+           <GenreList selectedGenre={selectedGenre} onSelectedGenre={(genre)=>setSelectedGenre(genre)}/>
           </GridItem>
       
         <GridItem area="main">
-          <GameGrid selectedGenre={selectedGenre}></GameGrid>
+          <PlatformSelector></PlatformSelector>
+          <GameGrid selectedGenre={selectedGenre} ></GameGrid>
         </GridItem>
       </Grid>
 
