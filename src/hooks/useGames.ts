@@ -1,3 +1,4 @@
+import { GameQuery } from "@/App";
 import useData from "./useData";
 import { Genre } from "./useGenres";
 
@@ -24,7 +25,15 @@ interface FetchGamesResponse {
 }
 
 
-const useGames = (selectedGenre : Genre | null) => useData<Game>('/games',{params : {genres : selectedGenre?.id}},[selectedGenre?.id]);
+const useGames = (gamequery : GameQuery ) => useData<Game>
+('/games',{
+  params : {
+    genres : gamequery.genre?.id,
+    platforms : gamequery.platform?.id,
+    ordering : gamequery.sortOrder,
+    search : gamequery.searchText
+  }}
+  ,[gamequery]);
 
 
 
