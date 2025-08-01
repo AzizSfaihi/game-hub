@@ -25,7 +25,7 @@ const GameGrid = ({gameQuery}:Props) => {
           columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
           //minChildWidth="220px"
           padding="10px"
-          spacing={3}
+          spacing={6}
           //px={{ base: 4, md: 6 }}
           //width="100%"
         >
